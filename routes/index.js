@@ -19,9 +19,13 @@ router.post('/send-email', function (req, res) {
   console.log(req.body);
   const mailOptions = {
     from: req.body.inputEmail,
-    to: 'paul.frankpc@gmail.com',
-    subject:'Checkin',
-    html:'<p>Saludos GIl</p>'
+    to: 'jaime2miguell@gmail.com',
+    subject:'Consulta de'+req.body.inputName,
+    html:'<p>'+req.body.inputMessage+'</p><br>' +
+        '<p>Si deseas contactarlo llamalo al:'+req.body.inputPhone+'</p><br>' +
+        '<p>Su correo:'+req.body.inputEmail+'</p>' +
+        '<hr>' +
+        '<p>El equipo de Impakta Perú</p>'
   };
   transporter.sendMail(mailOptions,function (err, info) {
     if (err){
