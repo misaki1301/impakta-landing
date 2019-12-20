@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= "Impakta Perú"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/css/bootstrap.min.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+  body
+    nav.navbar.fixed-top.navbar-expand-lg.navbar-dark
+      a.navbar-brand.ml-lg-4(href='/')
+        img.logo-impakta(alt="Logo Impakta" src='/images/logo.png')
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      div.collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href="#")
+              | INICIO
+          li.nav-item
+            a.nav-link(href="#")
+              | NOSOTROS
+          li.nav-item
+            a.nav-link(href="#")
+              | UBICACIONES
+          li.nav-item
+            a.nav-link(href="#")
+              | CONTACTO
+        div.my-lg-0.text-white
+          a.nav-item
+            i.fab.fa-whatsapp.mx-2
+            | 994181642
+            i.fab.fa-facebook-square.mx-2
+    block content
+
+    script(src="/js/jquery.min.js")
+    script(src="/js/popper.js")
+    script(src="/js/bootstrap.min.js")
+    script(src='/javascripts/navbar-enchulator.js' type='application/javascript')
+
+
