@@ -4,13 +4,13 @@ section#contact-form
             form.mx-4.mt-2(method="post" action="/send-email")
                 div.form-group
                     label(for="inputEmail") Ingrese su email:
-                    input#inputEmail.form-control(name="inputEmail" type="email" placeholder="Ingrese su email" required)
+                    input#inputEmail.form-control(name="inputEmail" type="email" placeholder="ej. mariano.diaz@gmail.com" required)
                 div.form-group
                     label(for="inputName") Ingrese su Nombre:
-                    input#inputName.form-control(name="inputName" type="text" placeholder="Ingrese su nombre" required)
+                    input#inputName.form-control(name="inputName" type="text" placeholder="Ej. Mariano Diaz" required)
                 div.form-group
                     label(for="inputPhone") Ingrese su telefono:
-                    input#inputPhone.form-control(name="inputPhone" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" required)
+                    input#inputPhone.form-control(name="inputPhone" type="tel" placeholder="921921921" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" required)
                 div.form-group
                     label(for="inputMessage") Ingrese su Mensaje:
                     textarea#inputMessage.form-control(name="inputMessage" required)
