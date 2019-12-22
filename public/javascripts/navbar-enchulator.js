@@ -1,23 +1,34 @@
 $(document).ready(function(){
+    var isVisible = $( ".collapse" ).is( ":visible" );
+    console.log(isVisible);
+    $(".navbar-toggler").click(function () {
+        isVisible = true;
+        if (!isVisible) {
+            $(".navbar.fixed-top").css('background','black');
+            isVisible = true;
+        }else if(!isVisible && $(window).scrollTop() < 100) {
+            $(".navbar.fixed-top").css('background', 'black');
+            isVisible = false;
+        } else if(isVisible && $(window).scrollTop() < 100) {
+            $(".navbar.fixed-top").css('background','black');
+            isVisible = true;
+        }
+    });
+
     $(window).scroll(function(){
         //console.log("hola, estoy con JQUERY");
         var scroll = $(window).scrollTop();
         var isFirst = true;
-        var isTransparent = false;
+        var isTransparent = true;
+
         if(scroll < 100){
-            isTransparent = true;
+            //isTransparent = true;
             $('.navbar.fixed-top').css('background', 'transparent');
             $('.logo-impakta').css('width','75%');
             $('.logo-impakta').css('height','75%');
             $('.navbar').css('box-shadow','none');
             $('.navbar').removeClass('fadeInDown animated');
             $('.navbar').addClass('fadeIn animated');
-            if (isTransparent) {
-                $(".navbar-toggler").click(function () {
-                    $(".navbar.fixed-top").css('background', 'black');
-                    isTransparent = false;
-                });
-            }
             console.log("todavia no sigo");
         } else{
             $('.navbar.fixed-top').css('background', 'rgba(0, 0, 0, 1)');
