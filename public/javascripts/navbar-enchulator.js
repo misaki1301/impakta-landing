@@ -1,6 +1,29 @@
 $(document).ready(function(){
-    var isVisible = $( ".collapse" ).is( ":visible" );
-    console.log(isVisible);
+    let navbarHeight = $('#super-nav').height();
+    $('body').scrollspy(
+        {
+            target:'#super-nav',
+            offset: navbarHeight
+        }
+    );
+
+    //var divId;
+
+    /*$('.nav-link').click(function () {
+        divId = $(this).attr('href');
+        $('html','body').animate(
+            {
+                scrollTop: $(divId).offset().top - 54
+            },
+            100
+        )
+    });*/
+
+    console.log(navbarHeight+" la altura del navbar");
+
+    let isVisible = $( ".collapse" ).is( ":visible" );
+    //console.log(isVisible);
+
     $(".navbar-toggler").click(function () {
         isVisible = true;
         if (!isVisible) {
@@ -29,7 +52,7 @@ $(document).ready(function(){
             $('.navbar').css('box-shadow','none');
             $('.navbar').removeClass('fadeInDown animated');
             $('.navbar').addClass('fadeIn animated');
-            console.log("todavia no sigo");
+            //console.log("todavia no sigo");
         } else{
             $('.navbar.fixed-top').css('background', 'rgba(0, 0, 0, 1)');
             $('.logo-impakta').css('width','68.5px');
@@ -38,7 +61,7 @@ $(document).ready(function(){
             $('.navbar').removeClass('fadeIn animated');
             $('.navbar').addClass('fadeInDown animated');
             isFirst = false;
-            console.log("mama me scrollearon");
+            //console.log("mama me scrollearon");
         }
     });
     $("#start").addClass('active');
