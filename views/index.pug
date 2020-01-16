@@ -8,3 +8,14 @@ block content
   include sections/about-us
   include sections/our-locations
   include sections/contact-form
+  // Creates the bootstrap modal where the image will appear
+  #imagemodal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-body
+          button.close(type='button' data-dismiss='modal')
+            span(aria-hidden='true') &times;
+            span.sr-only Close
+          img.imagepreview(src='' style='width: 100%')
+
+

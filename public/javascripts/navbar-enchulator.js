@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    $(function() {
+        $('.pop').on('click', function() {
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal').modal('show');
+        });
+    });
+
     let navbarHeight = $('#super-nav').height();
     $('body').scrollspy(
         {
@@ -6,18 +13,6 @@ $(document).ready(function(){
             offset: navbarHeight
         }
     );
-
-    //var divId;
-
-    /*$('.nav-link').click(function () {
-        divId = $(this).attr('href');
-        $('html','body').animate(
-            {
-                scrollTop: $(divId).offset().top - 54
-            },
-            100
-        )
-    });*/
 
     console.log(navbarHeight+" la altura del navbar");
 
